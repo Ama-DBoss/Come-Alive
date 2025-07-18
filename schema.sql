@@ -1,0 +1,16 @@
+CREATE TABLE quotes (id INT AUTO_INCREMENT PRIMARY KEY, quote_text TEXT NOT NULL);
+CREATE TABLE jokes  (id INT AUTO_INCREMENT PRIMARY KEY, joke_text TEXT NOT NULL);
+CREATE TABLE likes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  item_id VARCHAR(50),
+  user_ip VARCHAR(45),
+  emoji VARCHAR(10),
+  UNIQUE (item_id, user_ip)
+);
+CREATE TABLE comments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  item_id VARCHAR(50),
+  comment_text TEXT,
+  user_ip VARCHAR(45),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
